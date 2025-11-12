@@ -1,0 +1,78 @@
+---
+title: "Welcome to Luma Docs"
+description: "A modern documentation platform built with React and MDX. Features automatic routing, static generation, and GitHub Pages deployment."
+keywords: "documentation, React, MDX, Vite, static site generator, GitHub Pages"
+ogType: "website"
+twitterCard: "summary_large_image"
+author: "Luma Docs Team"
+publishedTime: "2024-01-01T00:00:00Z"
+section: "Documentation"
+tags: ["documentation", "react", "mdx", "getting-started"]
+order: 1
+---
+
+# Welcome to Luma Docs
+
+Luma Docs is a modern, fast, and beautiful documentation platform built with React, MDX, and Vite. It provides a seamless experience for both content creators and readers.
+
+## Feature Highlights
+
+Luma Docs is opinionated yet flexible. Below is a curated tour; each item links to a deeper showcase page so this site both **documents** and **demonstrates** the platform.
+
+| Category         | Highlights                                                                                                   | Deep Dive                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| Authoring        | MDX + React components, fenced code → syntax highlight, component imports via aliases                        | [Component Showcase](./guides/components/)     |
+| Content Pipeline | Deterministic multi-step build (versions → routes → css → search → sitemap → SSG)                            | [Architecture & Build](./guides/architecture/) |
+| Navigation       | Automatic route generation from folder structure, ordering via `order` frontmatter, smart sidebar flattening | [Advanced Features](./guides/advanced/)        |
+| Versioning       | Folder-based snapshots, switcher, archived banners, search scoping & fallback routing                        | [Versioning Guide](./guides/versioning/)       |
+| Search           | Zero-config local index, instant modal (⌘K), version scope toggle, heading deep-linking                      | [Search Showcase](./guides/search/)            |
+| SEO              | Frontmatter + inline `<SEO />` overrides, JSON-LD, automatic tags, sitemap generation                        | [SEO Examples](./seo-examples/)                |
+| Deployment       | Auto base-path detection, GitHub Pages native workflow, subfolder previews                                   | [Deployment & Base Path](./guides/deployment/) |
+| Customization    | Central `config.ts`, Tailwind theme, branded components, feature flags                                       | [Customization Guide](./guides/customization/) |
+
+> This site is intentionally self‑descriptive: every feature you read about is exercised somewhere in the live content.
+
+## Getting Started
+
+To get started with Luma Docs, simply create MDX files in the `content/pages` directory. Each file will automatically become a page in your documentation site.
+
+### File Structure
+
+```
+content/
+    pages/
+        index.mdx                 # Home page (/)
+        getting-started/
+            index.mdx               # /getting-started/
+        guides/
+            index.mdx               # /guides/
+            advanced.mdx            # /guides/advanced/
+            components.mdx          # /guides/components/
+            versioning.mdx          # /guides/versioning/
+```
+
+### Frontmatter
+
+Each MDX file can include frontmatter to specify metadata:
+
+```yaml
+---
+title: "Page Title"
+description: "Page description for SEO"
+order: 1
+---
+```
+
+- `title`: The page title (used in navigation and SEO)
+- `description`: Page description for SEO
+- `order`: Sort order for navigation (lower numbers appear first)
+
+## Next Steps
+
+1. Explore the showcase guides above (start with [Getting Started](./getting-started/)).
+2. Open `content/pages/` in your editor and create a new folder + `index.mdx`.
+3. Run `npm run dev` – the dev script regenerates routes & search automatically.
+4. Snapshot a release with `npm run snapshot:version -- v1.0` (or your version label) when you cut a milestone.
+5. Commit & push; the GitHub Pages workflow builds and deploys.
+
+Welcome to the future of documentation – where the docs are their own proof of capability.

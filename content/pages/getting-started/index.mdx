@@ -1,0 +1,133 @@
+---
+title: "Getting Started"
+description: "Learn how to get started with Luma Docs - installation, development, and deployment guide"
+keywords: "getting started, installation, development, setup, Luma Docs tutorial"
+ogType: "article"
+twitterCard: "summary_large_image"
+author: "Luma Docs Team"
+publishedTime: "2024-01-01T00:00:00Z"
+modifiedTime: "2024-01-15T10:00:00Z"
+section: "Guides"
+tags: ["tutorial", "setup", "installation", "development"]
+order: 2
+---
+
+# Getting Started
+
+This guide will help you get up and running with Luma Docs quickly.
+
+## SEO Features
+
+Luma Docs now includes comprehensive SEO support through frontmatter metadata. You can specify SEO attributes in your MDX files:
+
+```yaml
+---
+title: "Your Page Title"
+description: "Your page description for search engines"
+keywords: "keyword1, keyword2, keyword3"
+ogType: "article"
+ogImage: "/path/to/your/image.png"
+twitterCard: "summary_large_image"
+author: "Author Name"
+publishedTime: "2024-01-01T00:00:00Z"
+section: "Your Section"
+tags: ["tag1", "tag2", "tag3"]
+---
+```
+
+You can also override SEO settings directly in your MDX content using the `<SEO>` component:
+
+<SEO
+  title="Custom Page Title Override"
+  description="This description will override the frontmatter description"
+  keywords="custom, override, seo"
+/>
+
+## Installation
+
+1. Clone or download the Luma Docs template
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the build pipeline + dev server (handled automatically by the `dev` script):
+
+```bash
+npm run dev
+```
+
+## Creating Content
+
+Content is written in MDX format, which allows you to combine Markdown with React components.
+
+### Basic Markdown
+
+You can use all standard Markdown features:
+
+- **Bold text**
+- _Italic text_
+- [Links](https://example.com)
+- `Inline code`
+
+### Code Blocks
+
+```javascript
+function hello(name) {
+  return `Hello, ${name}!`;
+}
+
+// Usage example
+hello("World"); // => "Hello, World!"
+```
+
+### React Components
+
+You can also use React components directly in your MDX:
+
+```jsx
+<div className="bg-blue-100 p-4 rounded">This is a custom component!</div>
+```
+
+## Navigation
+
+Navigation is automatically generated based on your file structure and frontmatter. Pages are sorted by the `order` field in frontmatter, then alphabetically.
+
+## Deployment
+
+### GitHub Pages (Native Workflow)
+
+The project is optimized for GitHub Pages with automatic base path detection. In CI you typically just run `npm run build` inside a workflow like the one documented in the repository README (`Docs CI`).
+
+Local manual build:
+
+```bash
+npm run build
+```
+
+If you need to force a subfolder (preview / fork testing):
+
+```bash
+VITE_FORCE_BASE=/your-fork/ npm run dev   # Dev with forced base
+VITE_FORCE_BASE=/your-fork/ npm run build # Production build with forced base
+```
+
+Output goes to `dist/` which you can deploy to any static host. For GitHub Pages you normally rely on the workflow to publish the artifact.
+
+### Multi-Step Build Pipeline (Reference)
+
+`npm run build` internally runs a pipeline that:
+
+1. Generates versions list
+2. Generates routes + meta (extracts frontmatter / SEO)
+3. Builds Tailwind CSS
+4. Generates search index
+5. Generates sitemap
+6. Runs Vite React SSG to emit static HTML
+
+You rarely need to run the individual `generate:*` scripts manually— they are exposed mainly for troubleshooting.
+
+import { NextLink } from "@/components";
+
+<NextLink href="/guides/components/" label="Component Showcase" />
