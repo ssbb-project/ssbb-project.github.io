@@ -1,133 +1,144 @@
 ---
-title: "Getting Started"
-description: "Learn how to get started with Luma Docs - installation, development, and deployment guide"
-keywords: "getting started, installation, development, setup, Luma Docs tutorial"
+title: "How the NDO–AMP Library Works"
+description: "Overview of the NDO–AMP Library within the SSBB consortium: data collection, curation, and contributors."
+keywords: "NDO, AMP, SSBB, data collection, antimicrobial peptides, non-digestible oligosaccharides"
 ogType: "article"
 twitterCard: "summary_large_image"
-author: "Luma Docs Team"
-publishedTime: "2024-01-01T00:00:00Z"
-modifiedTime: "2024-01-15T10:00:00Z"
+author: "SSBB Project Team"
 section: "Guides"
-tags: ["tutorial", "setup", "installation", "development"]
+tags: ["NDO", "AMP", "data", "workflow", "SSBB"]
 order: 2
 ---
 
-# Getting Started
+# How the NDO–AMP Library Works
 
-This guide will help you get up and running with Luma Docs quickly.
+The **NDO–AMP Library** is an open-access resource developed within the  
+**Stop Spread Bad Bugs (SSBB)** MSCA consortium. It provides curated structural and experimental data for:
 
-## SEO Features
+- **Non-digestible oligosaccharides (NDOs)**
+- **Antimicrobial peptides (AMPs)**
 
-Luma Docs now includes comprehensive SEO support through frontmatter metadata. You can specify SEO attributes in your MDX files:
+The goal is to support research related to antimicrobial resistance, microbiome modulation, and carbohydrate–peptide interactions by making high-quality, well-documented data accessible to the scientific community.
 
-```yaml
 ---
-title: "Your Page Title"
-description: "Your page description for search engines"
-keywords: "keyword1, keyword2, keyword3"
-ogType: "article"
-ogImage: "/path/to/your/image.png"
-twitterCard: "summary_large_image"
-author: "Author Name"
-publishedTime: "2024-01-01T00:00:00Z"
-section: "Your Section"
-tags: ["tag1", "tag2", "tag3"]
+
+## Data Collection Workflow
+
+The NDO–AMP Library is built through a standardized multi-step workflow.
+
+### 1. Sample Generation and Acquisition
+
+- NDOs are synthesized, isolated, or supplied by consortium partners.  
+- AMPs are designed, synthesized, or obtained from participating laboratories.  
+- Each sample is assigned a unique identifier and linked to its origin (partner, project, or study).
+
+### 2. Structural Characterization
+
+For each NDO and AMP, structural information may include:
+
+- **NMR data (¹H, ¹³C, etc.)**  
+- **Mass spectrometry (MS) profiles**  
+- **Chromatographic data (HPLC, LC–MS, etc.)**  
+- **Predicted or experimentally determined 3D structures**
+
+Whenever possible, structures are stored in standardized formats such as:
+
+- **SMILES** and **InChI** for small molecules and carbohydrates  
+- **FASTA** for peptide sequences
+
+### 3. Functional and Microbiological Testing
+
+Experimental data may cover:
+
+- Antimicrobial activity against selected strains  
+- Prebiotic or microbiome-modulating effects  
+- Biofilm inhibition or disruption assays  
+- Other relevant microbiological or biochemical readouts
+
+All experiments are accompanied by basic metadata (e.g. conditions, concentration, assay type).
+
+### 4. Curation and Quality Control
+
+Before data are added to the public library:
+
+- Entries are checked for consistency and completeness.  
+- Structural and experimental data are reviewed by domain experts within SSBB.  
+- When applicable, data are cross-referenced with external databases or literature.  
+
+Only curated and approved entries are exposed through the NDO–AMP Library interface.
+
 ---
-```
 
-You can also override SEO settings directly in your MDX content using the `<SEO>` component:
+## Partner Organizations
 
-<SEO
-  title="Custom Page Title Override"
-  description="This description will override the frontmatter description"
-  keywords="custom, override, seo"
-/>
+> The list below is a placeholder. It should be updated with the actual companies, institutions, and research groups participating in the SSBB NDO–AMP Library.
 
-## Installation
+### Industry Partners (Examples)
 
-1. Clone or download the Luma Docs template
-2. Install dependencies:
+- **Company A** – industrial partner contributing NDO or AMP samples (website: https://company-a.example)  
+- **Company B** – technology or data partner (website: https://company-b.example)  
 
-```bash
-npm install
-```
+### Academic and Research Institutions (Examples)
 
-3. Run the build pipeline + dev server (handled automatically by the `dev` script):
+- **University X – Department of Microbiology** (website: https://university-x.example)  
+- **Institute Y – Glycobiology or Biochemistry Unit** (website: https://institute-y.example)  
 
-```bash
-npm run dev
-```
+You can replace these entries with the real names and URLs of your partners.
 
-## Creating Content
+---
 
-Content is written in MDX format, which allows you to combine Markdown with React components.
+## Contributors
 
-### Basic Markdown
+> Replace the placeholder names below with real contributors and their roles.
 
-You can use all standard Markdown features:
+Typical roles may include:
 
-- **Bold text**
-- _Italic text_
-- [Links](https://example.com)
-- `Inline code`
+- **Principal Investigators** – responsible for specific scientific work packages  
+- **Postdoctoral Researchers & PhD Students** – generating and analyzing data  
+- **Technical Staff** – running experiments and maintaining instruments  
+- **Data Managers / Bioinformaticians** – data curation and integration
 
-### Code Blocks
+Example placeholders:
 
-```javascript
-function hello(name) {
-  return `Hello, ${name}!`;
-}
+- **Dr. First Last** – Structural characterization lead  
+- **Dr. Second Last** – Microbiological assays lead  
+- **Researcher Name** – NDO synthesis and purification  
+- **Project Coordinator** – SSBB project management and communication  
 
-// Usage example
-hello("World"); // => "Hello, World!"
-```
+---
 
-### React Components
+## Project Websites and Resources
 
-You can also use React components directly in your MDX:
+> Replace the example URLs below with the actual project and institutional websites.
 
-```jsx
-<div className="bg-blue-100 p-4 rounded">This is a custom component!</div>
-```
+- **SSBB Project Website:**https://ssbb-project.eu/   
 
-## Navigation
+These links provide additional context, publications, and contact information related to the NDO–AMP Library and the broader SSBB project.
 
-Navigation is automatically generated based on your file structure and frontmatter. Pages are sorted by the `order` field in frontmatter, then alphabetically.
+---
 
-## Deployment
+## How to Navigate the NDO–AMP Library
 
-### GitHub Pages (Native Workflow)
+Within this documentation site, you can:
 
-The project is optimized for GitHub Pages with automatic base path detection. In CI you typically just run `npm run build` inside a workflow like the one documented in the repository README (`Docs CI`).
+- Use the **sidebar navigation** to explore sections such as data descriptions, methods, and references.  
+- Read **overview pages** that explain how specific datasets are organized.  
+- Follow links to external resources, publications, or partner websites where appropriate.
 
-Local manual build:
+As the project evolves, more pages may be added to describe:
 
-```bash
-npm run build
-```
+- Detailed data schemas  
+- Example use cases  
+- Integration with external tools or databases  
 
-If you need to force a subfolder (preview / fork testing):
+---
 
-```bash
-VITE_FORCE_BASE=/your-fork/ npm run dev   # Dev with forced base
-VITE_FORCE_BASE=/your-fork/ npm run build # Production build with forced base
-```
+## Contact and Contributions
 
-Output goes to `dist/` which you can deploy to any static host. For GitHub Pages you normally rely on the workflow to publish the artifact.
+If you would like to:
 
-### Multi-Step Build Pipeline (Reference)
+- Report an issue with a dataset  
+- Request additional information  
+- Propose new data to be added  
 
-`npm run build` internally runs a pipeline that:
-
-1. Generates versions list
-2. Generates routes + meta (extracts frontmatter / SEO)
-3. Builds Tailwind CSS
-4. Generates search index
-5. Generates sitemap
-6. Runs Vite React SSG to emit static HTML
-
-You rarely need to run the individual `generate:*` scripts manually— they are exposed mainly for troubleshooting.
-
-import { NextLink } from "@/components";
-
-<NextLink href="/guides/components/" label="Component Showcase" />
+please get in touch with the SSBB team via the contact details provided on the main project website or through the consortium’s official communication channels.
