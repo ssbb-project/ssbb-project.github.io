@@ -1,15 +1,10 @@
 ---
-title: "Getting Started"
-description: "Learn how to get started with Luma Docs - installation, development, and deployment guide"
-keywords: "getting started, installation, development, setup, Luma Docs tutorial"
-ogType: "article"
-twitterCard: "summary_large_image"
-author: "Luma Docs Team"
-publishedTime: "2024-01-01T00:00:00Z"
-modifiedTime: "2024-01-15T10:00:00Z"
+title: "How the NDOs-AMPs Library works"
+description: "Overview of data collection, contributrs, workflows, and the partner organizations."
+# keywords: "getting started, installation, development, setup, Luma Docs tutorial"
+# ogType: "article"
 section: "Guides"
-tags: ["tutorial", "setup", "installation", "development"]
-order: 2
+order: 1
 ---
 
 # Getting Started
@@ -18,116 +13,88 @@ This guide will help you get up and running with Luma Docs quickly.
 
 ## SEO Features
 
-Luma Docs now includes comprehensive SEO support through frontmatter metadata. You can specify SEO attributes in your MDX files:
+## Luma Docs now includes comprehensive SEO support through frontmatter metadata. You can specify SEO attributes in your MDX files:
+The **NDO–AMP Library** is a curated, open-access collection of **non-digestible oligosaccharides (NDOs)** and **antimicrobial peptides (AMPs)** generated through the *Stop Spread Bad Bugs (SSBB)* MSCA consortium.
+
+This page explains **how the data is collected**, **who contributes**, and **how the platform is maintained**.
 
 ```yaml
 ---
-title: "Your Page Title"
-description: "Your page description for search engines"
-keywords: "keyword1, keyword2, keyword3"
-ogType: "article"
-ogImage: "/path/to/your/image.png"
-twitterCard: "summary_large_image"
-author: "Author Name"
-publishedTime: "2024-01-01T00:00:00Z"
-section: "Your Section"
-tags: ["tag1", "tag2", "tag3"]
+## title: "Your Page Title"
+## description: "Your page description for search engines"
+## keywords: "keyword1, keyword2, keyword3"
+## ogType: "article"
+## ogImage: "/path/to/your/image.png"
+## twitterCard: "summary_large_image"
+## author: "Author Name"
+## publishedTime: "2024-01-01T00:00:00Z"
+## section: "Your Section"
+## tags: ["tag1", "tag2", "tag3"]
 ---
 ```
 
-You can also override SEO settings directly in your MDX content using the `<SEO>` component:
+# You can also override SEO settings directly in your MDX content using the `<SEO>` component:
+## 🔬 Data Collection Workflow
 
-<SEO
-  title="Custom Page Title Override"
-  description="This description will override the frontmatter description"
-  keywords="custom, override, seo"
-/>
+The library aggregates data across multiple stages:
 
-## Installation
+### 1. **Compound Identification**
+- NDO structures collected from partner research groups  
+- AMP sequences sourced from consortium laboratories  
+- Standardized format using SMILES, InChi, and FASTA (for peptides)
 
-1. Clone or download the Luma Docs template
-2. Install dependencies:
+### 2. **Structural Characterization**
+- NMR, MS, and chromatographic profiling  
+- 3D structural modeling performed using consortium computational tools  
+- Quality checks performed before data integration
 
-```bash
-npm install
-```
+### 3. **Experimental Data Acquisition**
+- Antimicrobial assays  
+- Prebiotic activity screening  
+- Microbial interaction experiments
 
-3. Run the build pipeline + dev server (handled automatically by the `dev` script):
+### 4. **Validation & Curation**
+- All data reviewed by consortium chemists, microbiologists, and bioinformaticians  
+- Cross-checking with external databases when available
 
-```bash
-npm run dev
-```
+---
 
-## Creating Content
+## 🧩 Partner Companies & Institutions
 
-Content is written in MDX format, which allows you to combine Markdown with React components.
+> ⚠️ *These are placeholders — I will replace them with the real names after you send them.*
 
-### Basic Markdown
+### Industry Partners
+- **Company A** — Website: https://example-companyA.com  
+- **Company B** — Website: https://example-companyB.com  
 
-You can use all standard Markdown features:
+### Academic & Research Partners
+- **University X, Department of Microbiology** — https://universityX.edu  
+- **Institute Y, Glycobiology Unit** — https://instituteY.org  
 
-- **Bold text**
-- _Italic text_
-- [Links](https://example.com)
-- `Inline code`
+---
 
-### Code Blocks
+## 👥 Contributors
 
-```javascript
-function hello(name) {
-  return `Hello, ${name}!`;
-}
+> ⚠️ Add real names & roles — I will format this properly once you provide them.
 
-// Usage example
-hello("World"); // => "Hello, World!"
-```
+- **Dr. First Last** — Structural biology  
+- **Dr. Second Last** — AMP assays  
+- **Researcher Name** — NDO purification  
+- **Project Manager** — SSBB Coordination  
 
-### React Components
+---
 
-You can also use React components directly in your MDX:
+## 🌍 Project Websites
 
-```jsx
-<div className="bg-blue-100 p-4 rounded">This is a custom component!</div>
-```
+- **SSBB Main Website:** https://ssbb-project.eu/
 
-## Navigation
 
-Navigation is automatically generated based on your file structure and frontmatter. Pages are sorted by the `order` field in frontmatter, then alphabetically.
+---
 
-## Deployment
+## 📬 Contact
 
-### GitHub Pages (Native Workflow)
+For questions, data contributions, or corrections:  
+**contact@example.org**
 
-The project is optimized for GitHub Pages with automatic base path detection. In CI you typically just run `npm run build` inside a workflow like the one documented in the repository README (`Docs CI`).
-
-Local manual build:
-
-```bash
-npm run build
-```
-
-If you need to force a subfolder (preview / fork testing):
-
-```bash
-VITE_FORCE_BASE=/your-fork/ npm run dev   # Dev with forced base
-VITE_FORCE_BASE=/your-fork/ npm run build # Production build with forced base
-```
-
-Output goes to `dist/` which you can deploy to any static host. For GitHub Pages you normally rely on the workflow to publish the artifact.
-
-### Multi-Step Build Pipeline (Reference)
-
-`npm run build` internally runs a pipeline that:
-
-1. Generates versions list
-2. Generates routes + meta (extracts frontmatter / SEO)
-3. Builds Tailwind CSS
-4. Generates search index
-5. Generates sitemap
-6. Runs Vite React SSG to emit static HTML
-
-You rarely need to run the individual `generate:*` scripts manually— they are exposed mainly for troubleshooting.
-
-import { NextLink } from "@/components";
 
 <NextLink href="/guides/components/" label="Component Showcase" />
